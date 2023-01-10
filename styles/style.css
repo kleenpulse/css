@@ -149,6 +149,7 @@ main .title:hover::before {
 }
 
 .navbar {
+  user-select: none;
   position: fixed;
   background: var(--bg-primary);
   transition: width 400ms ease;
