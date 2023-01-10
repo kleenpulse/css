@@ -144,6 +144,10 @@ main .title:hover::before {
   color: #049d8e;
 }
 
+.animations svg {
+  animation: rotate 3s linear infinite;
+}
+
 .navbar {
   position: fixed;
   background: var(--bg-primary);
@@ -470,6 +474,7 @@ li {
   border-radius: 50%;
   background-color: var(--text-secondary);
 }
+
 @keyframes rotate {
   0% {
     transform: rotate(360deg);
@@ -478,7 +483,6 @@ li {
     transform: rotate(0deg);
   }
 }
-
 ::-webkit-scrollbar {
   width: 0.25rem;
 }
