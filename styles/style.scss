@@ -14,7 +14,6 @@
 	--text-primary: #abaaaa;
 	--text-secondary: #ececec;
 	--bg-primary: #04142c;
-	// --bg-primary: #050506;
 	--bg-secondary: #002051;
 	--link: #00d8d8;
 	--box: #474747;
@@ -85,6 +84,7 @@ main {
 			background: var(--text-secondary);
 			padding: 0.7rem 0;
 			border-radius: 12px;
+			box-shadow: 0 0 15px var(--box);
 			a {
 				transition: scale 400ms;
 				scale: 1.2;
@@ -465,6 +465,7 @@ main {
 		margin-left: 16.9rem;
 	}
 }
+
 .fonts,
 .responsive {
 	margin-top: 2rem;
@@ -507,4 +508,9 @@ main {
 
 ::-webkit-scrollbar-thumb {
 	background: var(--text-primary);
+}
+
+::selection {
+	background: var(--text-primary);
+	color: var(--bg-primary);
 }
