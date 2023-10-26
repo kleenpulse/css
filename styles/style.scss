@@ -48,6 +48,12 @@ body {
 svg {
 	width: 40px;
 }
+ol li {
+	padding-top: 2rem;
+	@media screen and (min-width: 600px) {
+		padding-top: 4rem;
+	}
+}
 h2 {
 	font-size: larger;
 	text-transform: uppercase;
@@ -502,6 +508,9 @@ main {
 		height: 100px;
 		scale: 0.8;
 		animation: rotate 2s infinite;
+		&:where(:hover) {
+			animation-play-state: paused;
+		}
 	}
 	.circle {
 		width: 30px;

@@ -49,6 +49,15 @@ svg {
   width: 40px;
 }
 
+ol li {
+  padding-top: 2rem;
+}
+@media screen and (min-width: 600px) {
+  ol li {
+    padding-top: 4rem;
+  }
+}
+
 h2 {
   font-size: larger;
   text-transform: uppercase;
@@ -488,6 +497,9 @@ main .title:hover::before {
   height: 100px;
   scale: 0.8;
   animation: rotate 2s infinite;
+}
+.animation .loading-container:where(:hover) {
+  animation-play-state: paused;
 }
 .animation .circle {
   width: 30px;
