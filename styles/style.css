@@ -43,7 +43,6 @@ body {
   background: var(--bg-primary);
   color: var(--text-primary);
   transition: background 0.5s;
-  min-width: 360px;
 }
 
 svg {
@@ -217,8 +216,8 @@ main .title:hover::before {
 }
 
 .box-shadow {
-  height: 100px;
-  width: 200px;
+  height: 200px;
+  width: 270px;
   border-radius: 12px;
   box-shadow: 0 0 20px var(--box);
   margin-top: 2rem;
@@ -226,8 +225,26 @@ main .title:hover::before {
   align-items: center;
   justify-content: center;
   color: var(--text-primary);
+  animation: addShadow 5s ease infinite;
 }
 
+@keyframes addShadow {
+  0% {
+    box-shadow: 0 0 20px var(--box);
+  }
+  20% {
+    box-shadow: 0 0 40px var(--box);
+  }
+  50% {
+    box-shadow: 0 0 60px var(--box);
+  }
+  70% {
+    box-shadow: 0 20px 80px var(--box);
+  }
+  100% {
+    box-shadow: 0 0 20px var(--box);
+  }
+}
 .gradient,
 .gradient-txt {
   background: linear-gradient(90deg, #01fffb, #fb08ff, #ffb005);
@@ -251,16 +268,16 @@ main .title:hover::before {
 
 @media (max-width: 400px) {
   p,
-li {
+  li {
     text-align: center;
   }
   svg {
     width: 25px;
   }
   .animation,
-.gradient,
-.gradient-txt,
-.box-shadow {
+  .gradient,
+  .gradient-txt,
+  .box-shadow {
     margin: 0 auto;
   }
   .box-shadow {
@@ -275,6 +292,7 @@ li {
     background: var(--bg-secondary);
     color: var(--text-secondary);
     letter-spacing: 0.3ch;
+    width: 100%;
   }
   .logo svg {
     transform: rotate(0);
@@ -291,11 +309,12 @@ li {
     border-radius: 20px;
   }
   main {
-    padding-left: 2rem;
+    padding-left: 2.5rem;
     transition: background 1s;
+    transition: all 0.5s;
   }
   p,
-li {
+  li {
     line-height: 2;
     font-size: large;
   }
@@ -303,6 +322,7 @@ li {
 @media (min-width: 601px) and (max-width: 1200px) {
   nav:hover ~ main {
     margin-left: 16.8rem;
+    transition: all 0.3s;
   }
   .navbar {
     top: 0;
@@ -382,7 +402,7 @@ li {
   }
   .navbar .logo .logo-text {
     display: block;
-    font-size: x-large;
+    font-size: large;
     text-transform: uppercase;
     letter-spacing: 0.3ch;
     font-weight: bold;
@@ -485,6 +505,57 @@ li {
     transform: rotate(0deg);
   }
 }
+.filter {
+  height: fit-content;
+  margin-top: 1rem;
+}
+@media screen and (max-width: 600px) {
+  .filter img {
+    height: 300px;
+  }
+}
+@media screen and (max-width: 380px) {
+  .filter img {
+    width: 300px;
+  }
+}
+.filter img:hover {
+  animation: filters 10s ease infinite;
+  cursor: progress;
+}
+
+.foo {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.foo p {
+  opacity: 0.7;
+  position: absolute;
+  bottom: 0;
+}
+
+@keyframes filters {
+  0% {
+    filter: grayscale(1);
+  }
+  30% {
+    filter: grayscale(0) sepia(1);
+  }
+  50% {
+    filter: saturate(150%) sepia(2) brightness(120%);
+  }
+  70% {
+    filter: hue-rotate(10deg) brightness(110%);
+  }
+  80% {
+    filter: grayscale(1) hue-rotate(90deg) brightness(120%);
+  }
+  100% {
+    filter: grayscale(1);
+  }
+}
 ::-webkit-scrollbar {
   width: 0.5rem;
 }
@@ -500,4 +571,10 @@ li {
 ::selection {
   background: var(--text-primary);
   color: var(--bg-primary);
+}
+
+.am-active .nav-link {
+  filter: grayscale(0) opacity(1) !important;
+  background: var(--bg-secondary) !important;
+  color: var(--text-secondary) !important;
 }/*# sourceMappingURL=style.css.map */

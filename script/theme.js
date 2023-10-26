@@ -1,5 +1,6 @@
 let body = document.body
 let themeBtn = document.querySelector('#themeButton')
+const menuBtns = document.querySelectorAll('.menu-btn')
 
 let savedTheme = localStorage.getItem('theme')
 
@@ -28,3 +29,15 @@ themeBtn.onclick = function () {
     localStorage.setItem('theme', selected)
     body.className = selected
 }
+
+menuBtns.forEach(menuBtn => {
+
+    menuBtn.addEventListener('click', () => {
+        menuBtns.forEach(btn => {
+            btn.classList.remove('am-active')
+
+        })
+
+        menuBtn.classList.add('am-active')
+    })
+})
